@@ -1,9 +1,15 @@
-import { Link, useLocation, useParams } from "react-router-dom";
+import { useNavigate, useLocation, useParams } from "react-router-dom";
+import { useState } from "react";
+import { FiShoppingCart } from "react-icons/fi";
 import listings from "../data/listings.json";
 
 function ListingDetail() {
+  const navigate = useNavigate();
   const location = useLocation();
   const { id } = useParams();
+  const [cartMessage, setCartMessage] = useState("");
+  const [cartToastTitle, setCartToastTitle] = useState("");
+  const [cartToastClosing, setCartToastClosing] = useState(false);
 
   const listing = listings.find(
     (item) => item.id === Number(id)
@@ -13,14 +19,59 @@ function ListingDetail() {
     return <h1>Listing not found</h1>;
   }
 
+  const handleAddToCart = () => {
+    const existingCart = JSON.parse(
+      localStorage.getItem("cart") || "[]"
+    );
+
+    const alreadyInCart = existingCart.some(
+      (item) => item.id === listing.id
+    );
+
+    if (!alreadyInCart) {
+      const updatedCart = [...existingCart, listing];
+
+      localStorage.setItem(
+        "cart",
+        JSON.stringify(updatedCart)
+      );
+
+      setCartToastTitle("Added to cart!");
+      setCartMessage(listing.title);
+
+      setTimeout(() => {
+        setCartToastClosing(true);
+
+        setTimeout(() => {
+          setCartMessage("");
+          setCartToastTitle("");
+          setCartToastClosing(false);
+        }, 250);
+      }, 2250);
+    } else {
+      setCartToastTitle("Already in cart");
+      setCartMessage(listing.title);
+
+      setTimeout(() => {
+        setCartToastClosing(true);
+
+        setTimeout(() => {
+          setCartMessage("");
+          setCartToastTitle("");
+          setCartToastClosing(false);
+        }, 250);
+      }, 2250);
+    }
+  };
+
   return (
     <main className="detail-page">
-      <Link
-        to={location.state?.fromSaved ? "/saved" : "/"}
+      <button
         className="back-link"
+        onClick={() => navigate(-1)}
       >
-        🡨 Back to listings
-      </Link>
+        🡨 Back
+      </button>
 
       <div className="detail-card">
         <div className="detail-image">
@@ -36,6 +87,25 @@ function ListingDetail() {
           <p className="detail-price">
             ${listing.price}
           </p>
+
+          <button
+            className="add-to-cart-button"
+            onClick={handleAddToCart}
+          >
+            <FiShoppingCart />
+            Add to Cart
+          </button>
+
+          {cartMessage && (
+            <div className={`cart-toast ${cartToastClosing ? "cart-toast-closing" : ""}`}>
+              <span className="cart-toast-icon">✓</span>
+
+              <div>
+                <strong>{cartToastTitle}</strong>
+                <p>{cartMessage}</p>
+              </div>
+            </div>
+          )}
 
           <div className="detail-meta">
             <div className="detail-location">
@@ -85,17 +155,62 @@ function ListingDetail() {
             <div className="seller-profile">
               <div className="seller-avatar">
                 {listing.seller.charAt(0)}
-                {/* <img src={listing.sellerImage} /> */}
               </div>
 
-              <div>
+              <div className="seller-main">
                 <p className="seller-name">
                   {listing.seller}
                 </p>
 
-                <p className="seller-rating">
-                  ★ {listing.sellerRating}
+                <p className="seller-details">
+                  Member since {listing.sellerJoined}
                 </p>
+              </div>
+
+              <div className="seller-rating-block">
+                {listing.sellerRating > 0 ? (
+                  <>
+                    <div className="seller-rating">
+                      <span
+                        className="seller-stars"
+                        style={{
+                          "--rating": `${(listing.sellerRating / 5) * 100}%`,
+                        }}
+                      >
+                        ★★★★★
+                      </span>
+
+                      <span className="seller-rating-number">
+                        {listing.sellerRating}
+                      </span>
+                    </div>
+
+                    <p className="seller-details">
+                      {listing.sellerSales > 0
+                        ? `${listing.sellerSales} ${
+                            listing.sellerSales === 1
+                              ? "completed sale"
+                              : "completed sales"
+                          }`
+                        : "New seller"}
+                    </p>
+                  </>
+                ) : (
+                  <>
+                    <p className="seller-rating-number">
+                      New seller
+                    </p>
+
+                    {listing.sellerSales > 0 && (
+                      <p className="seller-details">
+                        {listing.sellerSales}{" "}
+                        {listing.sellerSales === 1
+                          ? "completed sale"
+                          : "completed sales"}
+                      </p>
+                    )}
+                  </>
+                )}
               </div>
             </div>
           </section>

@@ -1,5 +1,7 @@
-import { useState } from "react";
+import { Link } from "react-router-dom";
+import { useRef, useState } from "react";
 import listings from "../data/listings.json";
+import CustomSelect from "../components/CustomSelect";
 
 function Sell() {
   const categories = [
@@ -9,25 +11,46 @@ function Sell() {
   ];
 
   const [submitted, setSubmitted] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState("");
+  const [selectedCondition, setSelectedCondition] = useState("Like New");
+  const [categoryError, setCategoryError] = useState("");
+  const categoryRef = useRef(null);
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
+    if (!selectedCategory) {
+      setCategoryError("Please select a category.");
+
+      categoryRef.current?.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
+
+      return;
+    }
+
+    setCategoryError("");
     setSubmitted(true);
   };
 
   if (submitted) {
     return (
-      <div className="sell-page">
-        <div className="sell-success">
-          <h1>Listing Submitted ✓</h1>
-          <p>
-            Your item has been submitted to the demo marketplace.
+      <main className="order-success-page">
+        <div className="order-success-card">
+          <div className="success-icon">✓</div>
+
+          <h1>Listing submitted!</h1>
+
+          <p className="success-note">
+            This is a simulated feature.
           </p>
-          <small>
-            This is a simulated feature for the assessment.
-          </small>
+
+          <Link to="/" className="continue-shopping-button">
+            Back to Browse
+          </Link>
         </div>
-      </div>
+      </main>
     );
   }
 
@@ -53,23 +76,30 @@ function Sell() {
           />
         </label>
 
-        <label>
-          Category
-          <select required>
-            <option value="">
-              Select a category
-            </option>
+        <div ref={categoryRef} className="form-field">
+          <label>
+            Category
 
-            {categories.map((category) => (
-              <option
-                key={category}
-                value={category}
-              >
-                {category}
-              </option>
-            ))}
-          </select>
-        </label>
+            <CustomSelect
+              value={selectedCategory}
+              onChange={(value) => {
+                setSelectedCategory(value);
+                setCategoryError("");
+              }}
+              placeholder="Select a category"
+              options={categories.map((category) => ({
+                value: category,
+                label: category,
+              }))}
+            />
+
+            {categoryError && (
+              <p className="form-error">
+                Please select a category.
+              </p>
+            )}
+          </label>
+        </div>
 
         <label>
           Price
@@ -82,11 +112,24 @@ function Sell() {
 
         <label>
           Condition
-          <select required>
-            <option>Like New</option>
-            <option>Good</option>
-            <option>Fair</option>
-          </select>
+          <CustomSelect
+            value={selectedCondition}
+            onChange={setSelectedCondition}
+            options={[
+              {
+                value: "Like New",
+                label: "Like New",
+              },
+              {
+                value: "Good",
+                label: "Good",
+              },
+              {
+                value: "Fair",
+                label: "Fair",
+              },
+            ]}
+          />
         </label>
 
         <label>

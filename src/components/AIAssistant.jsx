@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import listings from "../data/listings.json";
 
@@ -15,6 +15,14 @@ function AIAssistant() {
     },
   ]);
   const [isLoading, setIsLoading] = useState(false);
+
+  const messagesEndRef = useRef(null);
+
+  useEffect(() => {
+    if (isOpen) {
+      messagesEndRef.current?.scrollIntoView();
+    }
+  }, [messages, isOpen]);
 
   const handleSend = async () => {
     if (!question.trim() || isLoading) {
@@ -170,6 +178,8 @@ function AIAssistant() {
                 Thinking...
               </div>
             )}
+
+            <div ref={messagesEndRef} />
           </div>
 
           <div className="ai-input-area">

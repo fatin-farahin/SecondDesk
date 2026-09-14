@@ -93,7 +93,11 @@ function ListingCard({ listing, onUnsave, fromSaved }) {
 
           <div className="listing-seller">
             <span>{listing.seller}</span>
-            <span>★ {listing.sellerRating}</span>
+            <span>
+              {listing.sellerRating > 0
+                ? `★ ${listing.sellerRating}`
+                : "No ratings yet"}
+            </span>
           </div>
         </div>
       </div>

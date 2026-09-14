@@ -16,6 +16,8 @@
       "weight": "1.46kg"
     },
     "sellerRating": 4.8,
+    "sellerSales": 12,
+    "sellerJoined": "2025",
     "postedDate": "2026-09-08",
     "status": "Available",
     "image": "/images/Lenovo ThinkPad T14 Gen 2.jpg"
@@ -36,7 +38,9 @@
       "batteryLife": "Up to 12 hours",
       "weight": "1.29kg"
     },
-    "sellerRating": 4.9,
+    "sellerRating": 3.2,
+    "sellerSales": 8,
+    "sellerJoined": "2025",
     "postedDate": "2026-09-07",
     "status": "Available",
     "image": "/images/Apple MacBook Air M1 2020.jpg"
@@ -57,7 +61,9 @@
       "batteryLife": "Up to 8 hours",
       "weight": "1.70kg"
     },
-    "sellerRating": 4.7,
+    "sellerRating": 1.8,
+    "sellerSales": 4,
+    "sellerJoined": "2026",
     "postedDate": "2026-09-05",
     "status": "Available",
     "image": "/images/ASUS Vivobook 15.jpg"
@@ -78,7 +84,9 @@
       "batteryLife": "3–4 hours",
       "weight": "1.60kg"
     },
-    "sellerRating": 4.5,
+    "sellerRating": 2.3,
+    "sellerSales": 7,
+    "sellerJoined": "2025",
     "postedDate": "2026-09-03",
     "status": "Available",
     "image": "/images/Dell Inspiron 14.jpg"
@@ -99,7 +107,9 @@
       "panelType": "IPS",
       "ports": "HDMI, VGA"
     },
-    "sellerRating": 4.8,
+    "sellerRating": 3.7,
+    "sellerSales": 10,
+    "sellerJoined": "2025",
     "postedDate": "2026-09-09",
     "status": "Available",
     "image": "/images/LG 24-inch Full HD Monitor.jpg"
@@ -120,7 +130,9 @@
       "panelType": "IPS",
       "ports": "HDMI, DisplayPort"
     },
-    "sellerRating": 4.9,
+    "sellerRating": 1.4,
+    "sellerSales": 3,
+    "sellerJoined": "2026",
     "postedDate": "2026-09-06",
     "status": "Available",
     "image": "/images/Samsung 27-inch QHD Monitor.jpg"
@@ -141,7 +153,9 @@
       "panelType": "IPS",
       "ports": "USB-C, HDMI, DisplayPort"
     },
-    "sellerRating": 4.6,
+    "sellerRating": 4.7,
+    "sellerSales": 12,
+    "sellerJoined": "2024",
     "postedDate": "2026-09-02",
     "status": "Available",
     "image": "/images/Dell 27-inch USB-C Monitor.jpg"
@@ -162,7 +176,9 @@
       "backlight": "White backlight",
       "compatibility": "Windows / macOS"
     },
-    "sellerRating": 4.7,
+    "sellerRating": 0,
+    "sellerSales": 0,
+    "sellerJoined": "2026",
     "postedDate": "2026-09-08",
     "status": "Available",
     "image": "/images/Keychron K2 Mechanical Keyboard.jpg"
@@ -184,6 +200,8 @@
       "compatibility": "Windows / macOS / iPadOS"
     },
     "sellerRating": 5.0,
+    "sellerSales": 15,
+    "sellerJoined": "2024",
     "postedDate": "2026-09-04",
     "status": "Available",
     "image": "/images/Logitech MX Keys Mini.jpg"
@@ -203,7 +221,9 @@
       "buttons": "8 programmable buttons",
       "weight": "82g"
     },
-    "sellerRating": 4.6,
+    "sellerRating": 0,
+    "sellerSales": 1,
+    "sellerJoined": "2026",
     "postedDate": "2026-09-07",
     "status": "Available",
     "image": "/images/Razer DeathAdder V2 Mouse.jpg"
@@ -224,7 +244,9 @@
       "batteryLife": "Up to 70 days",
       "weight": "141g"
     },
-    "sellerRating": 4.9,
+    "sellerRating": 1,
+    "sellerSales": 0,
+    "sellerJoined": "2026",
     "postedDate": "2026-09-01",
     "status": "Available",
     "image": "/images/Logitech MX Master 3S.jpg"
@@ -245,7 +267,9 @@
       "batteryLife": "Up to 10 hours",
       "connectivity": "Wi-Fi"
     },
-    "sellerRating": 4.8,
+    "sellerRating": 0,
+    "sellerSales": 0,
+    "sellerJoined": "2025",
     "postedDate": "2026-09-06",
     "status": "Available",
     "image": "/images/iPad 9th Generation 64GB.jpg"
@@ -266,7 +290,9 @@
       "batteryLife": "Up to 12 hours",
       "connectivity": "Wi-Fi"
     },
-    "sellerRating": 4.7,
+    "sellerRating": 3.1,
+    "sellerSales": 6,
+    "sellerJoined": "2024",
     "postedDate": "2026-09-03",
     "status": "Available",
     "image": "/images/Samsung Galaxy Tab S8.jpg"
@@ -287,7 +313,9 @@
       "functions": "552 functions",
       "condition": "Working"
     },
-    "sellerRating": 4.9,
+    "sellerRating": 2.4,
+    "sellerSales": 3,
+    "sellerJoined": "2025",
     "postedDate": "2026-09-09",
     "status": "Available",
     "image": "/images/Casio FX-991EX Scientific Calculator.jpg"
@@ -308,7 +336,9 @@
       "functions": "540+ functions",
       "condition": "Working"
     },
-    "sellerRating": 4.8,
+    "sellerRating": 3.9,
+    "sellerSales": 1,
+    "sellerJoined": "2026",
     "postedDate": "2026-09-05",
     "status": "Available",
     "image": "/images/Casio FX-991CW Scientific Calculator.jpg"
@@ -329,7 +359,9 @@
       "annotations": "Some highlighting",
       "language": "English"
     },
-    "sellerRating": 4.7,
+    "sellerRating": 1.4,
+    "sellerSales": 2,
+    "sellerJoined": "2025",
     "postedDate": "2026-09-02",
     "status": "Available",
     "image": "/images/Engineering Mathematics Textbook Bundle.jpg"
@@ -350,7 +382,9 @@
       "language": "English",
       "format": "Paperback"
     },
-    "sellerRating": 4.6,
+    "sellerRating": 3.4,
+    "sellerSales": 6,
+    "sellerJoined": "2024",
     "postedDate": "2026-09-01",
     "status": "Available",
     "image": "/images/Data Structures & Algorithms Textbook.jpg"
@@ -372,6 +406,8 @@
       "weight": "254g"
     },
     "sellerRating": 4.8,
+    "sellerSales": 8,
+    "sellerJoined": "2026",
     "postedDate": "2026-09-07",
     "status": "Available",
     "image": "/images/Sony WH-1000XM4 Headphones.jpg"
@@ -393,6 +429,8 @@
       "weight": "260g"
     },
     "sellerRating": 4.7,
+    "sellerSales": 11,
+    "sellerJoined": "2025",
     "postedDate": "2026-09-04",
     "status": "Available",
     "image": "/images/Anker Soundcore Q30.jpg"
@@ -413,7 +451,9 @@
       "ethernet": "Gigabit Ethernet",
       "compatibility": "USB-C laptops"
     },
-    "sellerRating": 4.9,
+    "sellerRating": 3.5,
+    "sellerSales": 9,
+    "sellerJoined": "2024",
     "postedDate": "2026-09-08",
     "status": "Available",
     "image": "/images/UGREEN 9-in-1 USB-C Dock.jpg"
@@ -434,7 +474,9 @@
       "powerDelivery": "Up to 100W",
       "compatibility": "USB-C laptops"
     },
-    "sellerRating": 4.8,
+    "sellerRating": 2.9,
+    "sellerSales": 7,
+    "sellerJoined": "2026",
     "postedDate": "2026-09-06",
     "status": "Available",
     "image": "/images/Anker USB-C 7-in-1 Hub.jpg"
@@ -455,7 +497,9 @@
       "connection": "USB-A",
       "mount": "Adjustable clip"
     },
-    "sellerRating": 4.7,
+    "sellerRating": 1.9,
+    "sellerSales": 2,
+    "sellerJoined": "2025",
     "postedDate": "2026-09-03",
     "status": "Available",
     "image": "/images/Logitech C920 HD Pro Webcam.jpg"
@@ -476,7 +520,9 @@
       "connection": "USB-A",
       "lighting": "Built-in ring light"
     },
-    "sellerRating": 4.6,
+    "sellerRating": 3.8,
+    "sellerSales": 4,
+    "sellerJoined": "2025",
     "postedDate": "2026-09-02",
     "status": "Available",
     "image": "/images/Razer Kiyo Webcam.jpg"
@@ -497,7 +543,9 @@
       "panelType": "TN",
       "ports": "HDMI, VGA"
     },
-    "sellerRating": 4.5,
+    "sellerRating": 4.9,
+    "sellerSales": 15,
+    "sellerJoined": "2025",
     "postedDate": "2026-09-01",
     "status": "Available",
     "image": "/images/Acer 24-inch Monitor.jpg"
@@ -519,6 +567,8 @@
       "weight": "1.26kg"
     },
     "sellerRating": 4.8,
+    "sellerSales": 9,
+    "sellerJoined": "2025",
     "postedDate": "2026-09-09",
     "status": "Available",
     "image": "/images/Microsoft Surface Laptop 4.jpg"
@@ -539,7 +589,9 @@
       "batteryLife": "Up to 10 hours",
       "connectivity": "Wi-Fi"
     },
-    "sellerRating": 4.9,
+    "sellerRating": 4.1,
+    "sellerSales": 8,
+    "sellerJoined": "2024",
     "postedDate": "2026-09-08",
     "status": "Available",
     "image": "/images/iPad Air 4 64GB.jpg"
@@ -560,7 +612,9 @@
       "compatibility": "Windows / macOS / iPadOS / Android",
       "weight": "423g"
     },
-    "sellerRating": 4.8,
+    "sellerRating": 4.5,
+    "sellerSales": 5,
+    "sellerJoined": "2026",
     "postedDate": "2026-09-05",
     "status": "Available",
     "image": "/images/Logitech K380 Bluetooth Keyboard.jpg"
@@ -581,7 +635,9 @@
       "microphone": "Built-in",
       "weight": "220g"
     },
-    "sellerRating": 4.6,
+    "sellerRating": 4.3,
+    "sellerSales": 9,
+    "sellerJoined": "2024",
     "postedDate": "2026-09-04",
     "status": "Available",
     "image": "/images/JBL Tune 760NC.jpg"
@@ -602,7 +658,9 @@
       "batteryLife": "5–7 hours",
       "weight": "1.75kg"
     },
-    "sellerRating": 4.7,
+    "sellerRating": 3.7,
+    "sellerSales": 6,
+    "sellerJoined": "2025",
     "postedDate": "2026-09-07",
     "status": "Available",
     "image": "/images/HP Pavilion 15.jpg"
@@ -623,7 +681,9 @@
       "features": "Graphing and programming",
       "connectivity": "USB"
     },
-    "sellerRating": 4.8,
+    "sellerRating": 1,
+    "sellerSales": 1,
+    "sellerJoined": "2026",
     "postedDate": "2026-09-06",
     "status": "Available",
     "image": "/images/Casio FX-9860GIII Graphing Calculator.jpg"

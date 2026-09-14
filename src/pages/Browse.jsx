@@ -1,6 +1,7 @@
 import { useState } from "react";
 import listings from "../data/listings.json";
 import ListingCard from "../components/ListingCard";
+import CustomSelect from "../components/CustomSelect";
 
 function Browse() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -87,53 +88,80 @@ function Browse() {
 
         <div className="filter-row">
           {/* category */}
-          <select
+          <CustomSelect
             value={selectedCategory}
-            onChange={(e) => setSelectedCategory(e.target.value)}
-          >
-            <option value="All">All Categories</option>
-            
-            {categories.map((category) => (
-              <option key={category} value={category}>
-                {category}
-              </option>
-            ))}
-          </select>
+            onChange={setSelectedCategory}
+            options={[
+              {
+                value: "All",
+                label: "All Categories",
+              },
+              ...categories.map((category) => ({
+                value: category,
+                label: category,
+              })),
+            ]}
+          />
 
           {/* condition */}  
-          <select
+          <CustomSelect
             value={selectedCondition}
-            onChange={(e) => setSelectedCondition(e.target.value)}
-          >
-            <option value="All">All Conditions</option>
-            
-            {conditions.map((condition) => (
-              <option key={condition} value={condition}>
-                {condition}
-              </option>
-            ))}
-          </select>
+            onChange={setSelectedCondition}
+            options={[
+              {
+                value: "All",
+                label: "All Conditions",
+              },
+              ...conditions.map((condition) => ({
+                value: condition,
+                label: condition,
+              })),
+            ]}
+          />
 
           {/* price */}  
-          <select
+          <CustomSelect
             value={selectedPrice}
-            onChange={(e) => setSelectedPrice(e.target.value)}
-          >
-            <option value="All">All Prices</option>
-            <option value="under300">Under $300</option>
-            <option value="300to600">$300 - $600</option>
-            <option value="over600">Over $600</option>
-          </select>
+            onChange={setSelectedPrice}
+            options={[
+              {
+                value: "All",
+                label: "All Prices",
+              },
+              {
+                value: "under300",
+                label: "Under $300",
+              },
+              {
+                value: "300to600",
+                label: "$300 - $600",
+              },
+              {
+                value: "over600",
+                label: "Over $600",
+              },
+            ]}
+          />
 
           {/* sorting */}  
-          <select
+          <CustomSelect
             value={sortOption}
-            onChange={(e) => setSortOption(e.target.value)}
-          >
-            <option value="newest">Newest</option>
-            <option value="priceLow">Price: Low to High</option>
-            <option value="priceHigh">Price: High to Low</option>
-          </select>
+            onChange={setSortOption}
+            options={[
+              {
+                value: "newest",
+                label: "Newest",
+              },
+              {
+                value: "priceLow",
+                label: "Price: Low to High",
+              },
+              {
+                value: "priceHigh",
+                label: "Price: High to Low",
+              },
+            ]}
+          />
 
           <button
             className="reset-button"

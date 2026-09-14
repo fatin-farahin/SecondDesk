@@ -104,7 +104,58 @@ app.post("/api/ai", async (req, res) => {
     }))
     .sort((a, b) => b.score - a.score);
 
+    const normalizedQuestion = question.toLowerCase();
+
+    const mentionedCategory = listings
+      .map((listing) => listing.category)
+      .find((category) =>
+        normalizedQuestion.includes(category.toLowerCase())
+      );
+
+    const mentionedLocation = listings
+      .map((listing) => listing.location)
+      .find((location) =>
+        normalizedQuestion.includes(location.toLowerCase())
+      );
+
+    const priceMatch = normalizedQuestion.match(
+      /(?:under|below|less than)\s*\$?(\d+)/
+    );
+
+    const maxPrice = priceMatch
+      ? Number(priceMatch[1])
+      : null;
+
+    let candidateListings = listings;
+
+    if (mentionedCategory) {
+      candidateListings = candidateListings.filter(
+        (listing) =>
+          listing.category.toLowerCase() ===
+          mentionedCategory.toLowerCase()
+      );
+    }
+
+    if (mentionedLocation) {
+      candidateListings = candidateListings.filter(
+        (listing) =>
+          listing.location.toLowerCase() ===
+          mentionedLocation.toLowerCase()
+      );
+    }
+
+    if (maxPrice !== null) {
+      candidateListings = candidateListings.filter(
+        (listing) => listing.price <= maxPrice
+      );
+    }
+
+    const candidateIds = new Set(
+      candidateListings.map((listing) => listing.id)
+    );
+
     const relevantIds = rankedListings
+      .filter((item) => candidateIds.has(item.id))
       .slice(0, 8)
       .map((item) => item.id);
 
@@ -148,7 +199,13 @@ app.post("/api/ai", async (req, res) => {
             - Recommend 3 to 5 matching listings when enough suitable listings exist.
             - Rank recommendations from most suitable to least suitable.
             - If none of the retrieved listings actually satisfy the user's request, say that no suitable listing was found and return an empty recommendations array.
+            - If the user asks for the single best option, return only the most suitable recommendation.
             - Do not claim that you can purchase items, contact sellers, or perform marketplace actions.
+            - Do not mention internal listing IDs in the answer.
+            - Do not expose internal catalogue IDs to the user.
+            - Keep answers concise and easy to scan.
+            - For simple questions, answer in 1 to 3 sentences.
+            - For comparisons, summarise the key differences without repeating every specification unless it is relevant to the question.
 
             Return your response as valid JSON with exactly two fields:
 
